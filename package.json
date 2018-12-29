@@ -1,0 +1,33 @@
+{
+  "name": "ipfs-did-document",
+  "version": "1.0.0",
+  "description": "A module for creating ipfs based DID Documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -rf ./.ipfs; jest --coverage",
+    "lint": "./node_modules/.bin/standard",
+    "generate-readme": "cp readme-template.md README.md; ./node_modules/.bin/jsdoc2md -g none -d 3 *.js >> README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3box/ipfs-did-document.git"
+  },
+  "author": "oed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3box/ipfs-did-document/issues"
+  },
+  "homepage": "https://github.com/3box/ipfs-did-document#readme",
+  "devDependencies": {
+    "ipfs": "^0.33.1",
+    "jest": "^23.6.0",
+    "jsdoc-to-markdown": "^4.0.1",
+    "mockdate": "^2.0.2",
+    "standard": "^12.0.1"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
