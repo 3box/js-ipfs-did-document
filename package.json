@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/3box/ipfs-did-document.git"
+    "url": "git+https://github.com/3box/js-ipfs-did-document.git"
   },
   "author": "oed",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/3box/ipfs-did-document/issues"
+    "url": "https://github.com/3box/js-ipfs-did-document/issues"
   },
-  "homepage": "https://github.com/3box/ipfs-did-document#readme",
+  "homepage": "https://github.com/3box/js-ipfs-did-document#readme",
   "devDependencies": {
     "ipfs": "^0.33.1",
     "jest": "^23.6.0",
