@@ -29,7 +29,7 @@ class DidDocument {
   static async load (ipfs, documentCid) {
     const doc = new DidDocument(ipfs)
     doc._content = await DidDocument.cidToDocument(ipfs, documentCid)
-    doc._content.previousDocument = documentCid
+    doc._content.previousDocument = { '/': documentCid.toString() }
     return doc
   }
 
@@ -153,10 +153,10 @@ class DidDocument {
     } else {
       this._content.updated = (new Date(Date.now())).toISOString()
     }
-    const cid = await this._ipfs.dag.put(this._content, { format: 'dag-cbor', hashAlg: 'sha3-512' })
+    const cid = await this._ipfs.dag.put(this._content, { format: 'dag-cbor', hashAlg: 'sha3-256' })
     // set up for further changes:
     this._content = await DidDocument.cidToDocument(this._ipfs, cid)
-    this._content.previousDocument = cid.toString()
+    this._content.previousDocument = { '/': cid.toString() }
     return cid
   }
 
@@ -174,6 +174,10 @@ class DidDocument {
       const re = new RegExp(DID_PLACEHOLDER, 'gi')
       const tmpDoc = JSON.stringify(doc).replace(re, documentCid)
       doc = JSON.parse(tmpDoc)
+    }
+    if (doc.previousDocument) {
+      // make CID human readable
+      doc.previousDocument = { '/': doc.previousDocument.toString() }
     }
     return doc
   }

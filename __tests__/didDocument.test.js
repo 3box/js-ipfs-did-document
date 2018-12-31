@@ -7,8 +7,9 @@ const INIT_DATE = 1546072635723
 MockDate.set(INIT_DATE)
 
 const EXP_DAG_OBJ_1_CONTENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:muport:GENESIS#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:muport:GENESIS', 'publicKeys': [{ 'id': 'did:muport:GENESIS#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'service': [{ 'id': 'did:muport:GENESIS;openid', 'serviceEndpoint': 'https://openid.example.com/', 'type': 'OpenIdConnectVersion1.0Service' }] }
-const EXP_DAG_OBJ_1_DOCUMENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ', 'publicKeys': [{ 'id': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'service': [{ 'id': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ;openid', 'serviceEndpoint': 'https://openid.example.com/', 'type': 'OpenIdConnectVersion1.0Service' }] }
-const EXP_DAG_OBJ_2_CONTENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ', 'publicKeys': [{ 'id': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'previousDocument': 'zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ', 'updated': '2018-12-29T08:37:25.723Z' }
+const EXP_DAG_OBJ_1_DOCUMENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP', 'publicKeys': [{ 'id': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'service': [{ 'id': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP;openid', 'serviceEndpoint': 'https://openid.example.com/', 'type': 'OpenIdConnectVersion1.0Service' }] }
+const EXP_DAG_OBJ_2_CONTENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP', 'publicKeys': [{ 'id': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'previousDocument': new CID('zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP'), 'updated': '2018-12-29T08:37:25.723Z' }
+const EXP_DAG_OBJ_2_DOCUMENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP', 'publicKeys': [{ 'id': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'previousDocument': { '/': 'zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP' }, 'updated': '2018-12-29T08:37:25.723Z' }
 
 describe('DidDoc', () => {
   let ipfs
@@ -62,7 +63,7 @@ describe('DidDoc', () => {
       expect(CID.isCID(cid)).toBeTruthy()
       expect((await ipfs.dag.get(cid)).value).toEqual(EXP_DAG_OBJ_1_CONTENT)
       expect(await DidDocument.cidToDocument(ipfs, cid)).toEqual(EXP_DAG_OBJ_1_DOCUMENT)
-      expect(doc._content).toEqual(Object.assign(EXP_DAG_OBJ_1_DOCUMENT, { previousDocument: cid.toString() }))
+      expect(doc._content).toEqual(Object.assign(EXP_DAG_OBJ_1_DOCUMENT, { previousDocument: { '/': cid.toString() } }))
     })
   })
 
@@ -70,7 +71,7 @@ describe('DidDoc', () => {
     it('loads document correctly from hash', async () => {
       const cid = doc._content.id.split(':')[2]
       doc = await DidDocument.load(ipfs, cid)
-      expect(doc._content).toEqual(Object.assign(EXP_DAG_OBJ_1_DOCUMENT, { previousDocument: cid }))
+      expect(doc._content).toEqual(Object.assign(EXP_DAG_OBJ_1_DOCUMENT, { previousDocument: { '/': cid } }))
     })
 
     it('updates entries correctly', async () => {
@@ -83,8 +84,8 @@ describe('DidDoc', () => {
 
       doc.addPublicKey('key2', 'Secp256k1VerificationKey2018', 'publicKeyHex', '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71')
       doc.addAuthentication('Secp256k1SignatureAuthentication2018', 'key2')
-      expect(doc._content.publicKeys).toEqual([{ 'id': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }])
-      expect(doc._content.authentication).toEqual([{ 'publicKey': 'did:muport:zBwWX7PX6XiJB4PakHkkhs17EfRKUaX7NKADY4qBdEWbUJaNiGJq71uww5MMYB8Poej1ZALRPh3ekXPNBVfAs4XRU6ibJ#key2', 'type': 'Secp256k1SignatureAuthentication2018' }])
+      expect(doc._content.publicKeys).toEqual([{ 'id': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }])
+      expect(doc._content.authentication).toEqual([{ 'publicKey': 'did:muport:zdpzR796Akf8Fso8muxNsuRmuwwXgH5EtqeGapcDve1BvRTaP#key2', 'type': 'Secp256k1SignatureAuthentication2018' }])
     })
 
     it('creates document correctly on commit', async () => {
@@ -92,7 +93,8 @@ describe('DidDoc', () => {
       const cid = await doc.commit()
       expect(CID.isCID(cid)).toBeTruthy()
       expect((await ipfs.dag.get(cid)).value).toEqual(EXP_DAG_OBJ_2_CONTENT)
-      expect(await DidDocument.cidToDocument(ipfs, cid)).toEqual(EXP_DAG_OBJ_2_CONTENT)
+      expect(await DidDocument.cidToDocument(ipfs, cid)).toEqual(EXP_DAG_OBJ_2_DOCUMENT)
+      expect((await ipfs.dag.get(`${cid}/previousDocument/`)).value).toEqual(EXP_DAG_OBJ_1_CONTENT)
     })
   })
 
