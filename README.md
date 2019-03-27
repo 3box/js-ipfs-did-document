@@ -27,6 +27,8 @@ Based on the DID spec: https://w3c-ccg.github.io/did-spec/
         * [.addService(id, type, serviceEndpoint, additionalFields)](#DidDocument+addService)
         * [.removeService(id)](#DidDocument+removeService)
         * [.setRevocationMethod(methodDescriptor)](#DidDocument+setRevocationMethod)
+        * [.addCustomProperty(propName, propValue)](#DidDocument+addCustomProperty)
+        * [.removeCustomProperty(propName)](#DidDocument+removeCustomProperty)
         * [.commit()](#DidDocument+commit) ⇒ <code>Promise.&lt;CID&gt;</code>
     * _static_
         * [.load(ipfs, documentCid)](#DidDocument.load) ⇒ [<code>Promise.&lt;DidDocument&gt;</code>](#DidDocument)
@@ -128,6 +130,29 @@ and is determined by the implementer of a revocation module.
 | Param | Type | Description |
 | --- | --- | --- |
 | methodDescriptor | <code>Object</code> | the object that defines the revocation method |
+
+<a name="DidDocument+addCustomProperty"></a>
+
+#### didDocument.addCustomProperty(propName, propValue)
+Add a new property
+
+**Kind**: instance method of [<code>DidDocument</code>](#DidDocument)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| propName | <code>String</code> | The name of the property |
+| propValue | <code>Object</code> | The value of the property |
+
+<a name="DidDocument+removeCustomProperty"></a>
+
+#### didDocument.removeCustomProperty(propName)
+Remove a property
+
+**Kind**: instance method of [<code>DidDocument</code>](#DidDocument)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| propName | <code>String</code> | The name of the property |
 
 <a name="DidDocument+commit"></a>
 

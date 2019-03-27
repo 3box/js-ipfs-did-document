@@ -142,6 +142,25 @@ class DidDocument {
   }
 
   /**
+   * Add a new property
+   *
+   * @param     {String}        propName            The name of the property
+   * @param     {Object}        propValue           The value of the property
+   */
+  addCustomProperty (propName, propValue) {
+    this._content[propName] = propValue
+  }
+
+  /**
+   * Remove a property
+   *
+   * @param     {String}        propName            The name of the property
+   */
+  removeCustomProperty (propName) {
+    delete this._content[propName]
+  }
+
+  /**
    * Commit all changes and create a new ipfs dag object.
    *
    * @return    {Promise<CID>}                   The CID of the object
