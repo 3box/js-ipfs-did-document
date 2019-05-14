@@ -19,6 +19,13 @@ class DidDocument {
     }
   }
 
+  get DID () {
+    if (this._content.id.includes(DID_PLACEHOLDER)) {
+      throw new Error('DID is not available before commit')
+    }
+    return this._content.id
+  }
+
   /**
    * Load an already existing DID Document.
    *
@@ -172,7 +179,7 @@ class DidDocument {
     } else {
       this._content.updated = (new Date(Date.now())).toISOString()
     }
-    const cid = await this._ipfs.dag.put(this._content, { format: 'dag-cbor', hashAlg: 'sha3-256' })
+    const cid = await this._ipfs.dag.put(this._content, { format: 'dag-cbor', hashAlg: 'sha2-256' })
     // set up for further changes:
     this._content = await DidDocument.cidToDocument(this._ipfs, cid)
     this._content.previousDocument = { '/': cid.toString() }
