@@ -170,13 +170,18 @@ class DidDocument {
   /**
    * Commit all changes and create a new ipfs dag object.
    *
+   * @param     {Object}        opts                Optional parameters
+   * @param     {Boolean}       noTimestamp         Don't use timestamps if true
+   *
    * @return    {Promise<CID>}                   The CID of the object
    */
-  async commit () {
+  async commit (opts = {}) {
     if (!this._content.created) {
       this._content['@context'] = 'https://w3id.org/did/v1'
-      this._content.created = (new Date(Date.now())).toISOString()
-    } else {
+      if (!opts.noTimestamp) {
+        this._content.created = (new Date(Date.now())).toISOString()
+      }
+    } else if (!opts.noTimestamp) {
       this._content.updated = (new Date(Date.now())).toISOString()
     }
     const cid = await this._ipfs.dag.put(this._content, { format: 'dag-cbor', hashAlg: 'sha2-256' })
