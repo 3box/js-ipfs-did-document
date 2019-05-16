@@ -1,6 +1,6 @@
 {
   "name": "ipfs-did-document",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A module for creating ipfs based DID Documents",
   "main": "index.js",
   "scripts": {

@@ -6,10 +6,10 @@ const DidDocument = require('../index')
 const INIT_DATE = 1546072635723
 MockDate.set(INIT_DATE)
 
-const EXP_DAG_OBJ_1_CONTENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:3:GENESIS#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:3:GENESIS', 'publicKeys': [{ 'id': 'did:3:GENESIS#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'service': [{ 'id': 'did:3:GENESIS;openid', 'serviceEndpoint': 'https://openid.example.com/', 'type': 'OpenIdConnectVersion1.0Service' }] }
-const EXP_DAG_OBJ_1_DOCUMENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP', 'publicKeys': [{ 'id': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'service': [{ 'id': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP;openid', 'serviceEndpoint': 'https://openid.example.com/', 'type': 'OpenIdConnectVersion1.0Service' }] }
-const EXP_DAG_OBJ_2_CONTENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP', 'publicKeys': [{ 'id': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'previousDocument': new CID('zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP'), 'updated': '2018-12-29T08:37:25.723Z' }
-const EXP_DAG_OBJ_2_DOCUMENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP', 'publicKeys': [{ 'id': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'previousDocument': { '/': 'zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP' }, 'updated': '2018-12-29T08:37:25.723Z' }
+const EXP_DAG_OBJ_1_CONTENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:3:GENESIS#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:3:GENESIS', 'publicKey': [{ 'id': 'did:3:GENESIS#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'service': [{ 'id': 'did:3:GENESIS;openid', 'serviceEndpoint': 'https://openid.example.com/', 'type': 'OpenIdConnectVersion1.0Service' }] }
+const EXP_DAG_OBJ_1_DOCUMENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK', 'publicKey': [{ 'id': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'service': [{ 'id': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK;openid', 'serviceEndpoint': 'https://openid.example.com/', 'type': 'OpenIdConnectVersion1.0Service' }] }
+const EXP_DAG_OBJ_2_CONTENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK', 'publicKey': [{ 'id': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'previousDocument': new CID('zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK'), 'updated': '2018-12-29T08:37:25.723Z' }
+const EXP_DAG_OBJ_2_DOCUMENT = { '@context': 'https://w3id.org/did/v1', 'authentication': [{ 'publicKey': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK#key2', 'type': 'Secp256k1SignatureAuthentication2018' }], 'created': '2018-12-29T08:37:15.723Z', 'id': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK', 'publicKey': [{ 'id': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }], 'revocationMethod': { 'contractAddress': '0x1b2d...', 'type': 'ethereumPublishAndRevokeTo' }, 'previousDocument': { '/': 'zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK' }, 'updated': '2018-12-29T08:37:25.723Z' }
 
 describe('DidDoc', () => {
   let ipfs
@@ -25,12 +25,12 @@ describe('DidDoc', () => {
       expect(doc._content.id).toEqual('did:3:GENESIS')
     })
 
-    it('adds and removes publicKeys correctly', () => {
+    it('adds and removes publicKey correctly', () => {
       doc.addPublicKey('key1', 'RsaVerificationKey2018', 'publicKeyPem', '-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n', 'did:3:someCid')
       doc.addPublicKey('key2', 'Secp256k1VerificationKey2018', 'publicKeyHex', '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71')
-      expect(doc._content.publicKeys).toEqual([{ 'id': 'did:3:GENESIS#key1', 'owner': 'did:3:someCid', 'publicKeyPem': '-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n', 'type': 'RsaVerificationKey2018' }, { 'id': 'did:3:GENESIS#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }])
+      expect(doc._content.publicKey).toEqual([{ 'id': 'did:3:GENESIS#key1', 'owner': 'did:3:someCid', 'publicKeyPem': '-----BEGIN PUBLIC KEY...END PUBLIC KEY-----\r\n', 'type': 'RsaVerificationKey2018' }, { 'id': 'did:3:GENESIS#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }])
       doc.removePublicKey('key1')
-      expect(doc._content.publicKeys).toEqual([{ 'id': 'did:3:GENESIS#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }])
+      expect(doc._content.publicKey).toEqual([{ 'id': 'did:3:GENESIS#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }])
     })
 
     it('adds and removes authentications correctly', () => {
@@ -72,7 +72,7 @@ describe('DidDoc', () => {
 
     it('can get DID after commit', async () => {
       const did = doc.DID
-      expect(did).toEqual('did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP')
+      expect(did).toEqual('did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK')
     })
   })
 
@@ -87,14 +87,14 @@ describe('DidDoc', () => {
       doc.removePublicKey('key2')
       doc.removeAuthentication('key2')
       doc.removeService('openid')
-      expect(doc._content.publicKeys).toEqual()
+      expect(doc._content.publicKey).toEqual()
       expect(doc._content.authentication).toEqual()
       expect(doc._content.service).toEqual()
 
       doc.addPublicKey('key2', 'Secp256k1VerificationKey2018', 'publicKeyHex', '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71')
       doc.addAuthentication('Secp256k1SignatureAuthentication2018', 'key2')
-      expect(doc._content.publicKeys).toEqual([{ 'id': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }])
-      expect(doc._content.authentication).toEqual([{ 'publicKey': 'did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP#key2', 'type': 'Secp256k1SignatureAuthentication2018' }])
+      expect(doc._content.publicKey).toEqual([{ 'id': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK#key2', 'publicKeyHex': '02b97c30de767f084ce3080168ee293053ba33b235d7116a3263d29f1450936b71', 'type': 'Secp256k1VerificationKey2018' }])
+      expect(doc._content.authentication).toEqual([{ 'publicKey': 'did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK#key2', 'type': 'Secp256k1SignatureAuthentication2018' }])
     })
 
     it('creates document correctly on commit', async () => {
@@ -108,7 +108,7 @@ describe('DidDoc', () => {
 
     it('get correct DID after new commit', async () => {
       const did = doc.DID
-      expect(did).toEqual('did:3:zdpuB1DLTPDo4L4oNzGLVVDUuNqdZ7Eyx43GqxMH2QPEZzAoP')
+      expect(did).toEqual('did:3:zdpuAtyaUSqvjLMjJxdjhhnhLNKJfMkYm3JQL1TxVP3cUyeMK')
     })
   })
 

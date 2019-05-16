@@ -50,8 +50,8 @@ class DidDocument {
    * @param     {String}        owner           The owner of the key (optional)
    */
   addPublicKey (id, type, encoding, key, owner) {
-    if (!this._content.publicKeys) {
-      this._content.publicKeys = []
+    if (!this._content.publicKey) {
+      this._content.publicKey = []
     }
     let entry = {
       id: `${this._content.id}#${id}`,
@@ -61,7 +61,7 @@ class DidDocument {
     if (owner) {
       entry.owner = owner
     }
-    this._content.publicKeys.push(entry)
+    this._content.publicKey.push(entry)
   }
 
   /**
@@ -70,10 +70,10 @@ class DidDocument {
    * @param     {String}        id              The id of the key, e.g. "key1"
    */
   removePublicKey (id) {
-    const idx = this._content.publicKeys.findIndex(e => e.id.endsWith(id))
-    this._content.publicKeys.splice(idx, 1)
-    if (!this._content.publicKeys.length) {
-      delete this._content.publicKeys
+    const idx = this._content.publicKey.findIndex(e => e.id.endsWith(id))
+    this._content.publicKey.splice(idx, 1)
+    if (!this._content.publicKey.length) {
+      delete this._content.publicKey
     }
   }
 
@@ -204,8 +204,8 @@ class DidDocument {
     if (doc.id.includes(DID_PLACEHOLDER)) {
       const re = new RegExp(DID_PLACEHOLDER, 'gi')
       doc.id = doc.id.replace(re, documentCid)
-      if (doc.publicKeys) {
-        doc.publicKeys = JSON.parse(JSON.stringify(doc.publicKeys).replace(re, documentCid))
+      if (doc.publicKey) {
+        doc.publicKey = JSON.parse(JSON.stringify(doc.publicKey).replace(re, documentCid))
       }
       if (doc.authentication) {
         doc.authentication = JSON.parse(JSON.stringify(doc.authentication).replace(re, documentCid))
