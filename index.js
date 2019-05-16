@@ -203,8 +203,16 @@ class DidDocument {
     // If genesis document replace placeholder identifier with cid
     if (doc.id.includes(DID_PLACEHOLDER)) {
       const re = new RegExp(DID_PLACEHOLDER, 'gi')
-      const tmpDoc = JSON.stringify(doc).replace(re, documentCid)
-      doc = JSON.parse(tmpDoc)
+      doc.id = doc.id.replace(re, documentCid)
+      if (doc.publicKeys) {
+        doc.publicKeys = JSON.parse(JSON.stringify(doc.publicKeys).replace(re, documentCid))
+      }
+      if (doc.authentication) {
+        doc.authentication = JSON.parse(JSON.stringify(doc.authentication).replace(re, documentCid))
+      }
+      if (doc.service) {
+        doc.service = JSON.parse(JSON.stringify(doc.service).replace(re, documentCid))
+      }
     }
     if (doc.previousDocument) {
       // make CID human readable
