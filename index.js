@@ -1,5 +1,7 @@
 const DID_PLACEHOLDER = 'GENESIS'
 
+const documentCache = {}
+
 /**
  * A class for creating ipfs based DID Documents.
  * Based on the DID spec: https://w3c-ccg.github.io/did-spec/
@@ -199,7 +201,10 @@ class DidDocument {
    * @return    {Promise<Object>}                        The DID document as a js object
    */
   static async cidToDocument (ipfs, documentCid) {
-    let doc = (await ipfs.dag.get(documentCid)).value
+    if (!documentCache[documentCid]) {
+      documentCache[documentCid] = ipfs.dag.get(documentCid)
+    }
+    const doc =  (await documentCache[documentCid]).value
     // If genesis document replace placeholder identifier with cid
     if (doc.id.includes(DID_PLACEHOLDER)) {
       const re = new RegExp(DID_PLACEHOLDER, 'gi')
