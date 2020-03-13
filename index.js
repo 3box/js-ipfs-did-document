@@ -204,7 +204,7 @@ class DidDocument {
     if (!documentCache[documentCid]) {
       documentCache[documentCid] = ipfs.dag.get(documentCid)
     }
-    const doc =  (await documentCache[documentCid]).value
+    const doc =  Object.assign({}, (await documentCache[documentCid]).value)
     // If genesis document replace placeholder identifier with cid
     if (doc.id.includes(DID_PLACEHOLDER)) {
       const re = new RegExp(DID_PLACEHOLDER, 'gi')
